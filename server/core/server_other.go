@@ -4,6 +4,7 @@
 package core
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/fvbock/endless"
@@ -15,5 +16,6 @@ func initServer(address string, router *gin.Engine) server {
 	s.ReadHeaderTimeout = 20 * time.Second
 	s.WriteTimeout = 20 * time.Second
 	s.MaxHeaderBytes = 1 << 20
+	fmt.Println("address=======", address)
 	return s
 }
